@@ -112,7 +112,7 @@ function configure {
 			case "$item" in
 				"coretemp-"*)
 					CPU_ADDRESS="$(echo "$sensorOutput" | grep "$item" | sed 's/"//g;s/:{//;s/^\s*//')"
-					CPU_ITEM_PREFIX="Core "
+					CPU_ITEM_PREFIX="Package id"
 					CPU_TEMP_CAPTION="Core"
 					break
 					;;
