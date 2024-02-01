@@ -113,7 +113,7 @@ function configure {
 				"coretemp-"*)
 					CPU_ADDRESS="$(echo "$sensorOutput" | grep "$item" | sed 's/"//g;s/:{//;s/^\s*//')"
 					CPU_ITEM_PREFIX="Package id"
-					CPU_TEMP_CAPTION="Core"
+					CPU_TEMP_CAPTION="CPU Package"
 					break
 					;;
 				"k10temp-"*)
@@ -230,7 +230,7 @@ function install_mod {
 								let index = coreKey.match(/\\\S+\\\s*(\\\d+)/);\n\
 								if(index !== null && index.length > 1) {\n\
 									index = index[1];\n\
-									tempStr = \`\${cpuTempCaption}&nbsp;\${index}:&nbsp;\${temp}&deg;C\`;\n\
+									tempStr = \`\${cpuTempCaption}:&nbsp;\${temp}&deg;C\`;\n\
 								}\n\
 								else {\n\
 									tempStr = \`\${cpuTempCaption}:&nbsp;\${temp}&deg;C\`;\n\
